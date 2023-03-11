@@ -11,7 +11,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'azure app service'
+    azureResourceManagerConnection: 'Resource Group Service Connection'
     subscriptionId: '7122b890-4d38-46fb-8c3d-9e0a76c39cc6'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'app_service'
@@ -20,4 +20,3 @@ steps:
     csmFile: './azuredeploy.json'
     csmParametersFile: './azuredeploy.parameters.json'
     deploymentMode: 'Incremental'
-
