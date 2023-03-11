@@ -88,8 +88,17 @@
                         {
                             "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
                             "value": "false"
+                        },
+                        {
+                            "name": "DOCKER_ENABLE_CI",
+                            "value": "true"
                         }
                     ],
+                    // "deploymentCenter": {
+                    //     "properties": {
+                    //         "isManualIntegration": false
+                    //     }
+                    // },
                     "vnetRouteAllEnabled": true,
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "appCommandLine": "[parameters('dockerRegistryStartupCommand')]",
