@@ -98,13 +98,13 @@
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "clientAffinityEnabled": false,
-                "virtualNetworkSubnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'calculator-vnet', 'calculator-subnet')]",
+                "virtualNetworkSubnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'calculator-vpc', 'calculator-subnet')]",
                 "httpsOnly": true,
                 "publicNetworkAccess": "Enabled"
             }
         },
         {
-            "apiVersion": "2018-11-01",
+            "apiVersion": "2019-08-01",
             "name": "[parameters('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('location')]",
@@ -126,9 +126,9 @@
         },
         {
             "type": "Microsoft.Network/virtualNetworks",
-            "apiVersion": "2020-07-01",
+            "apiVersion": "2020-05-01",
             "location": "northeurope",
-            "name": "calculator-vnet",
+            "name": "calculator-vpc",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -155,7 +155,7 @@
                         {
                             "type": "Microsoft.Network/virtualNetworks/subnets",
                             "apiVersion": "2020-07-01",
-                            "name": "calculator-vnet/calculator-subnet",
+                            "name": "calculator-vpc/calculator-subnet",
                             "properties": {
                                 "delegations": [
                                     {
@@ -177,7 +177,7 @@
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', 'calculator-vnet')]"
+                "[resourceId('Microsoft.Network/virtualNetworks', 'calculator-vpc')]"
             ]
         }
     ]

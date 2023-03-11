@@ -39,7 +39,7 @@
             "value": "0"
         },
         "linuxFxVersion": {
-            "value": "DOCKER|calculators.azurecr.io/wahid2272calculatorprivate_build-docker:latest"
+            "value": "DOCKER|calculators.azurecr.io/wahid2272calculator_build-docker:latest"
         },
         "dockerRegistryUrl": {
             "value": "https://calculators.azurecr.io"
