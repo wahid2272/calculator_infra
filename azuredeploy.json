@@ -91,14 +91,9 @@
                         },
                         {
                             "name": "DOCKER_ENABLE_CI",
-                            "value": "true"
+                            "value": "false"
                         }
                     ],
-                    // "deploymentCenter": {
-                    //     "properties": {
-                    //         "isManualIntegration": false
-                    //     }
-                    // },
                     "vnetRouteAllEnabled": true,
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "appCommandLine": "[parameters('dockerRegistryStartupCommand')]",
